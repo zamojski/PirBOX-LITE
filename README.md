@@ -67,7 +67,7 @@ Your subscription goes a long way in backing my work. If you feel more generous,
 
 <img src="img/arduino_board_config.jpg"/>
 
-9. Upload it, Done!
+9. Click "Upload Using Programmer" or "Ctrl + Shift + U", Done!
 
 ____________
 
