@@ -63,16 +63,31 @@ Your subscription goes a long way in backing my work. If you feel more generous,
 #define LORA_CRC_ON               true
    
 ```
-7. In Arduino IDE, select the programmer "SerialUPDI-230400 baud "Required UPDI Programmer"
-8. Select board configuration as shown below.
+5. Select board configuration as shown below.
 
 <img src="img/arduino_board_config.jpg"/>
 
-9. Disconnect the Battery if connected, then connect the UPDI Programmer to the back of the PirBOX using the "Pogo PIN Clamp"
-<img src="img/updi.png" width="200" />
+6. Disconnect the Battery if connected. Then connect the UPDI programmer to the back of the PirBOX using the pogo pin clamp, or any method you prefer.
 
 
-10. Click "Upload Using Programmer" or "Ctrl + Shift + U", Done!
+<table>
+  <tr>
+    <td><img src="img/updi.png" width="200" /></td>
+    <td>
+
+<!-- Markdown-style table inside HTML cell -->
+  
+| **PirBOX** | **Programmer** |
+|------------|----------------|
+| 3.3V       | 3.3V           |
+| GND        | GND            |
+| UPDI       | UPDI           |
+
+</table>
+
+
+7. In Arduino IDE, select the COM Port and programmer "SerialUPDI-230400 baud "Required UPDI Programmer"
+8. Click "Upload Using Programmer" or "Ctrl + Shift + U", Done!
 
 ____________
 
