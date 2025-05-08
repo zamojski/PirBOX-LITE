@@ -94,7 +94,7 @@ Your subscription goes a long way in backing my work. If you feel more generous,
 
 ____________
 
-# Do you want to assemble it yourself?
+# Prefer to build it on your own?
 This project is open-source and includes Source code, 3D Print files, and Gerber files, allowing you to order blank PCBs and assemble the PirBOX-Lite yourself. To help with manual assembly, I've included an Interactive HTML BOM in the PCB folder. This tool shows the placement and polarity of each component, helping to eliminate errors during soldering.
 
 > [!NOTE]
