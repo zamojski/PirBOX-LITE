@@ -27,6 +27,9 @@ Your subscription goes a long way in backing my work. If you feel more generous,
 > [!NOTE]
 > **Not intended** for indoor use or high traffic areas, Zigbee devices are better suited for that.  
 
+### Power / Range Mesurement
+- In progress...
+
 ### Required:
 - Gateway **[CapiBridge](https://www.pricelesstoolkit.com/en/projects/42-129-capibridge-gateway-kit.html#/41-frequency-868_915_mhz) or LilyGo LoRa Board**
 - Programmer [UNIProg](https://www.pricelesstoolkit.com/en/projects/33-uniprog-uartupdi-programmer-33v-0741049314412.html) or any other 3.3v UPDI Programmer
