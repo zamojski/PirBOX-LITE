@@ -28,12 +28,17 @@ Your subscription goes a long way in backing my work. If you feel more generous,
 > **Not intended** for indoor use or high traffic areas, Zigbee devices are better suited for that.  
 
 ### 📋 Power Consumption Table
+Mesured by "Power Profiler KIT 2"
 
-| Condition                  | Current Draw     |
-|---------------------------|-------------------|
-| No motion detected        | 11 µA             |
-| Constant motion detected  | 25 µA             |
-| One status send           | 4.02 µA  or 45 mAh|
+| Condition                  | Current Draw      | Battery Life (approx.)         |
+|---------------------------|-------------------|--------------------------------|
+| No motion detected        | 11 µA             | ~2.6 years (250 mAh / 11 µA)   |
+| Constant motion detected  | 25 µA             | ~1.1 years (250 mAh / 25 µA)   |
+| Single status transmission (314 ms)           | 4.02 µAh          | ~62,188 sends (250,000 µAh / 4.02 µAh) |
+
+> [!NOTE]
+> Battery Life is only an approximate value. Actual battery life can vary depending on temperature, battery quality, configuration, and other factors.
+
 
 ### Required:
 - Gateway **[CapiBridge](https://www.pricelesstoolkit.com/en/projects/42-129-capibridge-gateway-kit.html#/41-frequency-868_915_mhz) or LilyGo LoRa Board**
