@@ -20,15 +20,20 @@ Your subscription goes a long way in backing my work. If you feel more generous,
 - Seamless integration with **Home Assistant MQTT**  
 - **LoRa-based communication** for long-range, low-power use cases  
 - Sends **( Detected** / **Cleared )** statuses to a LoRa gateway "**[CapiBridge](https://github.com/PricelessToolkit/CapiBridge) or LilyGo LoRa Board**"  
-- **Ultra-low power consumption**: ~15 µAh when idle or in constant detection  
+- **Ultra-low power consumption**: ~11 µAh when No motion detected
 - Powered by a **250 mAh battery** for long-lasting operation
 - Perfect for remote monitoring where Wi-Fi or Zigbee range isn't enough
 
 > [!NOTE]
 > **Not intended** for indoor use or high traffic areas, Zigbee devices are better suited for that.  
 
-### Power / Range Mesurement
-- In progress...
+### 📋 Power Consumption Table
+
+| Condition                  | Current Draw     |
+|---------------------------|-------------------|
+| No motion detected        | 11 µA             |
+| Constant motion detected  | 25 µA             |
+| One status send           | 4.02 µA  or 45 mAh|
 
 ### Required:
 - Gateway **[CapiBridge](https://www.pricelesstoolkit.com/en/projects/42-129-capibridge-gateway-kit.html#/41-frequency-868_915_mhz) or LilyGo LoRa Board**
