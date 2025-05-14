@@ -102,6 +102,36 @@ Mesured by "Power Profiler KIT 2"
 7. In Arduino IDE, select the COM Port and programmer "SerialUPDI-230400 baud "Required UPDI Programmer"
 8. Click "Upload Using Programmer" or "Ctrl + Shift + U", Done!
 
+If your gateway and sensor are configured correctly, you should see under MQTT Devices "PIRBoxL" or the custom name you assigned in the config.h file. Once it's visible under MQTT Devices, the next step is to create an automation in Home Assistant to send a notification to your mobile phone.
+
+Below is an example automation that sends a message along with an image. This example is configured for a mailbox, but you can easily adapt it to fit your specific needs.
+
+"Automation" Notification
+
+```yaml
+
+alias: Pirbox
+description: "MailBoxSensor"
+triggers:
+  - type: motion
+    device_id: 5e37501c1847ff9e185f293757ff91b3
+    entity_id: 0cc089df300ab037a78abc906b9736af
+    domain: binary_sensor
+    trigger: device
+conditions: []
+actions:
+  - data:
+      message: Mailbox is Full!
+      title: New Mail!
+      data:
+        url: /lovelace/home
+        importance: high
+        channel: MailBox
+        tag: mailbox
+        image: /media/local/notify/mailbox.jpg
+    action: notify.mobile_app_doogee_v20pro
+
+```
 ____________
 
 # Prefer to build it on your own?
