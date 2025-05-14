@@ -20,17 +20,31 @@ Your subscription goes a long way in backing my work. If you feel more generous,
 - Seamless integration with **Home Assistant MQTT**  
 - **LoRa-based communication** for long-range, low-power use cases  
 - Sends **( Detected** / **Cleared )** statuses to a LoRa gateway "**[CapiBridge](https://github.com/PricelessToolkit/CapiBridge) or LilyGo LoRa Board**"  
-- **Ultra-low power consumption**: ~15 µAh when idle or in constant detection  
+- **Ultra-low power consumption**: ~11 µAh when No motion detected
 - Powered by a **250 mAh battery** for long-lasting operation
 - Perfect for remote monitoring where Wi-Fi or Zigbee range isn't enough
 
 > [!NOTE]
 > **Not intended** for indoor use or high traffic areas, Zigbee devices are better suited for that.  
 
+### 📋 Power Consumption Table
+Mesured by "Power Profiler KIT 2"
+
+| Condition                  | Current Draw      | Battery Life (approx.)         |
+|---------------------------|-------------------|--------------------------------|
+| No motion detected        | 11 µA             | ~2.6 years (250 mAh / 11 µA)   |
+| Constant motion detected  | 25 µA             | ~1.1 years (250 mAh / 25 µA)   |
+| Single status transmission (314 ms)           | 4.02 µAh          | ~62,188 sends (250,000 µAh / 4.02 µAh) |
+
+> [!NOTE]
+> Battery Life is only an approximate value. Actual battery life can vary depending on temperature, battery quality, configuration, and other factors.
+
+
 ### Required:
 - Gateway **[CapiBridge](https://www.pricelesstoolkit.com/en/projects/42-129-capibridge-gateway-kit.html#/41-frequency-868_915_mhz) or LilyGo LoRa Board**
 - Programmer [UNIProg](https://www.pricelesstoolkit.com/en/projects/33-uniprog-uartupdi-programmer-33v-0741049314412.html) or any other 3.3v UPDI Programmer
-- LiPo Battery [1S 250mAh](https://www.pricelesstoolkit.com/en/products/47-battery-li-po-37v-250mah-ph-20mm-2-pin.html) or less LiPo Battery (Connector PH2.0) 35x20x4mm MAX
+- LiPo Battery [1S 250mAh](https://www.pricelesstoolkit.com/en/products/47-battery-li-po-37v-250mah-ph-20mm-2-pin.html) or less (Connector PH2.0) Important! MAX SIZE "35x20x4mm"
+- Pogo PIN Clamp 1x6 PIN "Only for convenience" https://s.click.aliexpress.com/e/_ooPke35
 
 ### Choosing a Gateway Hardware
 1. [CapiBridge LoRa/ESP-NOW Gateway](https://github.com/PricelessToolkit/CapiBridge): I developed this project, featuring multi-protocol support, including LoRa and ESP-NOW. It will be compatible with my future LoRa and ESP-NOW sensor projects. Purchasing this gateway will support my ongoing open-source developments.
@@ -62,17 +76,71 @@ Your subscription goes a long way in backing my work. If you feel more generous,
 #define LORA_CRC_ON               true
    
 ```
-7. In Arduino IDE, select the programmer "SerialUPDI-230400 baud "Required UPDI Programmer"
-8. Select board configuration as shown below.
+5. Select board configuration as shown below.
 
 <img src="img/arduino_board_config.jpg"/>
 
-9. Click "Upload Using Programmer" or "Ctrl + Shift + U", Done!
+6. Disconnect the Battery if connected. Then connect the UPDI programmer to the back of the PirBOX using the pogo pin clamp, or any method you prefer.
+
+
+<table>
+  <tr>
+    <td><img src="img/updi.png" width="200" /></td>
+    <td>
+
+<!-- Markdown-style table inside HTML cell -->
+  
+| **PirBOX** | **Programmer** |
+|------------|----------------|
+| 3.3V       | 3.3V           |
+| GND        | GND            |
+| UPDI       | UPDI           |
+
+</table>
+
+
+7. In Arduino IDE, select the COM Port and programmer "SerialUPDI-230400 baud "Required UPDI Programmer"
+8. Click "Upload Using Programmer" or "Ctrl + Shift + U", Done!
+
+If your gateway and sensor are configured correctly, you should see under MQTT Devices "PIRBoxL" or the custom name you assigned in the config.h file. Once it's visible under MQTT Devices, the next step is to create an automation in Home Assistant to send a notification to your mobile phone.
+
+Below is an example automation that sends a message along with an image. This example is configured for a mailbox, but you can easily adapt it to fit your specific needs.
+
+"Automation" Notification [Manual](https://companion.home-assistant.io/docs/notifications/actionable-notifications/)
+
+```yaml
+
+alias: Pirbox
+description: "MailBoxSensor"
+triggers:
+  - type: motion
+    device_id: 5e37501c1847ff9e185f293757ff91b3
+    entity_id: 0cc089df300ab037a78abc906b9736af
+    domain: binary_sensor
+    trigger: device
+conditions: []
+actions:
+  - data:
+      message: Mailbox is Full!
+      title: New Mail!
+      data:
+        url: /lovelace/home
+        importance: high
+        channel: MailBox
+        tag: mailbox
+        image: /media/local/notify/mailbox.jpg
+    action: notify.mobile_app_doogee_v20pro
+
+```
+PS: mailbox.jpg is included in the "img" folder.
 
 ____________
 
-# Do you want to assemble it yourself?
-This project is open-source, allowing you to order PCBs and assemble CapiBridge on your own. To simplify this process, I've provided an "Interactive HTML Boom File" located in the PCB folder. This interactive file helps you identify where to solder each component and polarity, reducing the chances of errors to a minimum. But if you don't feel confident in assembling it yourself, you can always opt to purchase a pre-assembled board from my Shop https://www.pricelesstoolkit.com
+# Prefer to build it on your own?
+This project is open-source and includes Source code, 3D Print files, and Gerber files, allowing you to order blank PCBs and assemble the PirBOX-Lite yourself. To help with manual assembly, I've included an Interactive HTML BOM in the PCB folder. This tool shows the placement and polarity of each component, helping to eliminate errors during soldering.
+
+> [!NOTE]
+>  Please note that POS (Pick and Place) files and KiCad source files are not included. These are intentionally omitted, as this project is intended for manual assembly. If you prefer a ready-to-use solution, you can purchase one directly from my shop: https://www.pricelesstoolkit.com.
 
 ## Schematic
 <details>
