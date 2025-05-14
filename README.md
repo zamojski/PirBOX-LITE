@@ -132,6 +132,8 @@ actions:
     action: notify.mobile_app_doogee_v20pro
 
 ```
+PS: mailbox.jpg is included in the "img" folder.
+
 ____________
 
 # Prefer to build it on your own?
