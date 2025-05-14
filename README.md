@@ -106,7 +106,7 @@ If your gateway and sensor are configured correctly, you should see under MQTT D
 
 Below is an example automation that sends a message along with an image. This example is configured for a mailbox, but you can easily adapt it to fit your specific needs.
 
-"Automation" Notification
+"Automation" Notification [Manual](https://companion.home-assistant.io/docs/notifications/actionable-notifications/)
 
 ```yaml
 
