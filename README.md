@@ -8,7 +8,7 @@ Your subscription goes a long way in backing my work. If you feel more generous,
 
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/U6U2QLAF8)
 
-## PirBOX-LITE
+## PirBOX-LITE and [PirBOX-MAX](https://github.com/PricelessToolkit/PirBOX-MAX)
 
 **PirBOX-LITE** is an Open-Source, compact, low-power LoRa-based PIR motion sensor designed for long-range applications such as mailboxes, basements, underground "garages/parkings", and remote sheds. It is the improved, more affordable successor to the **[MailBox-Guard](https://github.com/PricelessToolkit/MailBoxGuard)** project.
 
