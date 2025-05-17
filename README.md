@@ -48,7 +48,7 @@ Measured by "Power Profiler KIT 2"
 - Pogo PIN Clamp 1x6 PIN "Only for convenience" https://s.click.aliexpress.com/e/_ooPke35
 
 ### Choosing a Gateway Hardware
-> [!NOTE]
+> [!IMPORTANT]
 > PirBOX LoRa module `SX1262` by default uses `SYNC_WORD 0x12` so make sure Gateway configured appropriately.
 
 1. [CapiBridge LoRa/ESP-NOW Gateway](https://github.com/PricelessToolkit/CapiBridge): I developed this project, featuring multi-protocol support, including LoRa and ESP-NOW. It supports 2-way communication, making it possible to send commands to `LoRa` nodes as well as receive the sensor data. It will be compatible with my future LoRa and ESP-NOW sensor projects.
