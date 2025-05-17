@@ -51,7 +51,7 @@ Measured by "Power Profiler KIT 2"
 > [!NOTE]
 > PirBOX LoRa module `SX1262` by default uses `SYNC_WORD 0x12` so make sure Gateway configured appropriately.
 
-1. [CapiBridge LoRa/ESP-NOW Gateway](https://github.com/PricelessToolkit/CapiBridge): I developed this project, featuring multi-protocol support, including LoRa and ESP-NOW. It will be compatible with my future LoRa and ESP-NOW sensor projects. Purchasing this gateway will support my ongoing open-source developments.
+1. [CapiBridge LoRa/ESP-NOW Gateway](https://github.com/PricelessToolkit/CapiBridge): I developed this project, featuring multi-protocol support, including LoRa and ESP-NOW. It supports 2-way communication, making it possible to send commands to `LoRa` nodes as well as receive the sensor data. It will be compatible with my future LoRa and ESP-NOW sensor projects.
 2. [LilyGo LoRa Board](https://github.com/PricelessToolkit/MailBoxGuard/tree/main?tab=readme-ov-file#select-ttgo_lora-board-version): This option is more affordable but only has LoRa and support is limited.
 
 ### Configuration / Reflashing:
