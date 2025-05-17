@@ -28,7 +28,7 @@ Your subscription goes a long way in backing my work. If you feel more generous,
 > **Not intended** for indoor use or high traffic areas, Zigbee devices are better suited for that.  
 
 ### 📋 Power Consumption Table
-Mesured by "Power Profiler KIT 2"
+Measured by "Power Profiler KIT 2"
 
 | Condition                  | Current Draw      | Battery Life (approx.)         |
 |---------------------------|-------------------|--------------------------------|
@@ -48,6 +48,9 @@ Mesured by "Power Profiler KIT 2"
 - Pogo PIN Clamp 1x6 PIN "Only for convenience" https://s.click.aliexpress.com/e/_ooPke35
 
 ### Choosing a Gateway Hardware
+> [!NOTE]
+> PirBOX LoRa module `SX1262` by default uses `SYNC_WORD 0x12` so make sure Gateway configured appropriately.
+
 1. [CapiBridge LoRa/ESP-NOW Gateway](https://github.com/PricelessToolkit/CapiBridge): I developed this project, featuring multi-protocol support, including LoRa and ESP-NOW. It will be compatible with my future LoRa and ESP-NOW sensor projects. Purchasing this gateway will support my ongoing open-source developments.
 2. [LilyGo LoRa Board](https://github.com/PricelessToolkit/MailBoxGuard/tree/main?tab=readme-ov-file#select-ttgo_lora-board-version): This option is more affordable but only has LoRa and support is limited.
 
