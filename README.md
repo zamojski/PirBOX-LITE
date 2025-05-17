@@ -56,7 +56,7 @@ Measured by "Power Profiler KIT 2"
 
 ### Configuration / Reflashing:
 > [!NOTE]
-> By default, it comes already flashed with the default firmware. Code"xy"
+> By default, it comes already flashed and tested with the default firmware. Code"xy"
 
 1. Install MegaTinyCore in Arduino IDE "http://drazzy.com/package_drazzy.com_index.json"
 2. Download the PirBOX-Lite project file; don't just copy and paste the code.
