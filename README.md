@@ -19,7 +19,7 @@ Your subscription goes a long way in backing my work. If you feel more generous,
 ### Key Features:
 - Seamless integration with **Home Assistant MQTT**  
 - **LoRa-based communication** for long-range, low-power use cases  
-- Sends **( Detected** / **Cleared )** statuses to a LoRa gateway "**[CapiBridge](https://github.com/PricelessToolkit/CapiBridge) or LilyGo LoRa Board**"  
+- Sends **( Detected** / **Cleared )** statuses to a LoRa gateway "**[CapiBridge](https://github.com/PricelessToolkit/CapiBridge) or [LilyGo LoRa Board](https://github.com/PricelessToolkit/TTGO_Gateway)**"  
 - **Ultra-low power consumption**: ~11 µAh when No motion detected
 - Powered by a **250 mAh battery** for long-lasting operation
 - Perfect for remote monitoring where Wi-Fi or Zigbee range isn't enough
@@ -41,7 +41,7 @@ Measured by "Power Profiler KIT 2"
 
 
 ### Required:
-- Gateway **[CapiBridge](https://www.pricelesstoolkit.com/en/projects/42-129-capibridge-gateway-kit.html#/41-frequency-868_915_mhz) or LilyGo LoRa Board**
+- Gateway **[CapiBridge](https://www.pricelesstoolkit.com/en/projects/42-129-capibridge-gateway-kit.html#/41-frequency-868_915_mhz) or [LilyGo LoRa Board](https://github.com/PricelessToolkit/TTGO_Gateway)**
 - Programmer [UNIProg](https://www.pricelesstoolkit.com/en/projects/33-uniprog-uartupdi-programmer-33v-0741049314412.html) or any other 3.3v UPDI Programmer
 - LiPo Battery [1S 250mAh](https://www.pricelesstoolkit.com/en/products/47-battery-li-po-37v-250mah-ph-20mm-2-pin.html) or less (Connector PH2.0) Important! MAX SIZE "35x20x4mm"
 - LiPo Charger [Micro-Charger](https://www.pricelesstoolkit.com/en/li-ion-li-poly/48-micro-charger-for-li-po-and-li-ion.html) or any other 4.2V lipo charger with (PH2.0)
