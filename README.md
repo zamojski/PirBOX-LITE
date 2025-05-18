@@ -80,7 +80,7 @@ Measured by "Power Profiler KIT 2"
 #define LORA_PREAMBLE_LENGTH      6         // Same for Tx and Rx
 #define LORA_PAYLOADLENGTH        0         // 0: Variable length packet (explicit header),  1..255 for Fixed length packet (implicit header)
 #define LORA_CRC_ON               true
-#define LORA_SYNC_WORD            0x1424  // 0x1424 Private sync word for SX126x modules.
+#define LORA_SYNC_WORD            0x1424    // The 0x1424 private sync word is equivalent to the CapiBridge 0x12 sync word.
 
 
 // LoRa Sync Word Compatibility Table
