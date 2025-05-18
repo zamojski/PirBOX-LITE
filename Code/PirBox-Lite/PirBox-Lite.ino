@@ -47,11 +47,13 @@ void sensorISR() {
 void initLoRaRadio() {
   int16_t ret = lora.begin(BAND, TX_OUTPUT_POWER);
   if (ret != ERR_NONE) {
-    // Serial.println(F("LoRa init failed!"));
-    while (1);
+    while (1);  // Halt if init fails
   }
 
-  // Configure LoRa parameters
+  //Set your custom sync word (example: 0x2D01)
+//  lora.SetSyncWord(SYNC_WORD);
+
+  // Now configure LoRa parameters
   lora.LoRaConfig(
     LORA_SPREADING_FACTOR,
     LORA_BANDWIDTH,
@@ -59,11 +61,11 @@ void initLoRaRadio() {
     LORA_PREAMBLE_LENGTH,
     LORA_PAYLOADLENGTH,
     LORA_CRC_ON,
-    false             // no IQ inversion
+    false,  // No IQ inversion
+    LORA_SYNC_WORD
   );
-
-  // Serial.println(F("LoRa ready to go!"));
 }
+
 
 void powerOFF() {
   delay(100);

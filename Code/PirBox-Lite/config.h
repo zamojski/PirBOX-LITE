@@ -6,7 +6,6 @@
 ////////////////////////////// LORA CONFIG ////////////////////////////////////
 
 // For sending 6 bytes ("6 characters") of data using different Spreading Factors (SF), the estimated time on air (ToA)
-// for each SF is as follows:
 //
 // SF7: Approximately 0.027 seconds (27.494 milliseconds)
 // SF8: Approximately 0.052 seconds (52.224 milliseconds)
@@ -26,3 +25,20 @@
 #define LORA_PREAMBLE_LENGTH      6         // Same for Tx and Rx
 #define LORA_PAYLOADLENGTH        0         // 0: Variable length packet (explicit header),  1..255 for Fixed length packet (implicit header)
 #define LORA_CRC_ON               true
+
+// PirBox uses the SX126x module, which requires a 16-bit sync word (e.g., 0x3444 or 0x1424).
+// Don’t use sync words 0x1444 it compatible with public and privat at the same times.
+// Do NOT use 0x3444 — this is reserved for LoRaWAN (equivalent to 8-bit 0x34).
+// CapiBridge uses the SX127x module, which uses an 8-bit sync word (e.g., 0x12 or 0x34).
+//
+// Use 0x1424 for private (non-LoRaWAN) networks — this matches 8-bit CapiBridge sync word "0x12".
+// You can also choose a custom sync word to isolate your network:
+//   SX126x   →     SX127x Equivalent
+//   0x1437   →         0x37
+//   0x14A9   →         0xA9
+//   0x14D5   →         0xD5
+//
+//     Only use values starting with 0x14 (i.e., format 0x14YZ), as this format is required
+//     by the SX126x for compatibility with 8-bit sync words.
+
+#define LORA_SYNC_WORD            0x1424  // 0x1424 Private sync word.
