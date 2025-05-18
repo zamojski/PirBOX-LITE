@@ -25,20 +25,22 @@
 #define LORA_PREAMBLE_LENGTH      6         // Same for Tx and Rx
 #define LORA_PAYLOADLENGTH        0         // 0: Variable length packet (explicit header),  1..255 for Fixed length packet (implicit header)
 #define LORA_CRC_ON               true
+#define LORA_SYNC_WORD            0x1424    // The 0x1424 private sync word is equivalent to the CapiBridge 0x12 sync word.
 
-// PirBox uses the SX126x module, which requires a 16-bit sync word (e.g., 0x3444 or 0x1424).
-// Don’t use sync words 0x1444 it compatible with public and privat at the same times.
-// Do NOT use 0x3444 — this is reserved for LoRaWAN (equivalent to 8-bit 0x34).
-// CapiBridge uses the SX127x module, which uses an 8-bit sync word (e.g., 0x12 or 0x34).
+// LoRa Sync Word Compatibility Table
 //
-// Use 0x1424 for private (non-LoRaWAN) networks — this matches 8-bit CapiBridge sync word "0x12".
-// You can also choose a custom sync word to isolate your network:
-//   SX126x   →     SX127x Equivalent
-//   0x1437   →         0x37
-//   0x14A9   →         0xA9
-//   0x14D5   →         0xD5
+// This table shows how 16-bit sync words used on "PirBOX" SX126x-based modules (like Ra-01SH) correspond to the 8-bit sync words used on older SX127x-based modules.
 //
-//     Only use values starting with 0x14 (i.e., format 0x14YZ), as this format is required
-//     by the SX126x for compatibility with 8-bit sync words.
-
-#define LORA_SYNC_WORD            0x1424  // 0x1424 Private sync word.
+// | Type    | SX126x Sync Word | SX127x Equivalent | Notes                                                               |
+// |---------|------------------|-------------------|---------------------------------------------------------------------|
+// | Public  | `0x3444`         | `0x34`            | Default for LoRaWAN. Reserved, do **not** use for private networks. |
+// | Private | `0x1424`         | `0x12`            | Recommended for custom/private networks.                            |
+// | Private | `0x1437`         | `0x37`            | Custom private network sync word.                                   |
+// | Private | `0x14A9`         | `0xA9`            | Custom private network sync word.                                   |
+// | Private | `0x14D5`         | `0xD5`            | Custom private network sync word.                                   |
+//
+// Notes:
+// - SX126x uses a 16-bit sync word, always starting with `0x14` for compatibility.
+// - SX127x uses an 8-bit sync word, derived from the lower byte (`0xYZ` from `0x14YZ`).
+// - Avoid `0x3444` (`0x34`) in private networks — it's reserved for "LoRaWAN public" use.
+// - Choose a unique `0x14YZ` value for a private network to avoid collisions and improve isolation.
