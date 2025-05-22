@@ -59,7 +59,7 @@ Measured by "Power Profiler KIT 2"
 
 ### Configuration / Reflashing:
 > [!NOTE]
-> By default, it comes already flashed and tested with the default firmware, GATEWAY_KEY "xy" and encryption_key { 0x4B, 0xA3, 0x3F, 0x9C }. You need to change the keys!
+> By default, it comes already flashed and tested with the default firmware, `GATEWAY_KEY "xy"` and `encryption_key { 0x4B, 0xA3, 0x3F, 0x9C }`. You need to change the keys!
 
 1. Install MegaTinyCore in Arduino IDE "http://drazzy.com/package_drazzy.com_index.json"
 2. Download the PirBOX-Lite project file; don't just copy and paste the code.
@@ -69,7 +69,7 @@ Measured by "Power Profiler KIT 2"
 > [!IMPORTANT]  
 > The PirBOX LoRa module uses the sync word `0x1424`, which is equivalent to the CapiBridge's `0x12` sync word.
 
-```c
+```cpp
 /////////////////////////// LoRa Gateway Key ///////////////////////////
 
 #define GATEWAY_KEY "xy"          // Keep it Short
