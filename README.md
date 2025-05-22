@@ -25,7 +25,7 @@ Your subscription goes a long way in backing my work. If you feel more generous,
 - Perfect for remote monitoring where Wi-Fi or Zigbee range isn't enough
 
 > [!NOTE]
-> **Not intended** for close proximity use or high-traffic areas; Zigbee devices are better suited for those applications.
+> **Not intended** for close proximity use or in high-traffic areas, Zigbee devices are better suited for those applications.
 
 ### 📋 Power Consumption Table
 Measured by "Power Profiler KIT 2"
