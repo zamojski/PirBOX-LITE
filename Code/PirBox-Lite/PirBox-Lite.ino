@@ -37,6 +37,21 @@ unsigned long relay2OffTime = 0;
 unsigned long powerTimerStart = 0;
 bool timerStarted = false;
 
+
+// -------------------- Xor Encryp/Decrypt -------------------- //
+
+String xorCipher(String input) {
+  const byte key[] = encryption_key;
+  const int keyLength = encryption_key_length;
+
+  String output = "";
+  for (int i = 0; i < input.length(); i++) {
+    byte keyByte = key[i % keyLength];
+    output += char(input[i] ^ keyByte);
+  }
+  return output;
+}
+
 // -------------------- INTERRUPT SERVICE ROUTINE -------------------- //
 void sensorISR() {
   sensorTriggered = true;
@@ -144,6 +159,10 @@ void loop() {
     // Append battery measurement
     int intPercentage = batt();
     payload += ",\"b\":" + String(intPercentage) + "}";
+
+    #if Encryption
+    payload = xorCipher(payload);
+    #endif
 
     // Convert payload to raw bytes for sending
     const char* cstrPayload = payload.c_str();
