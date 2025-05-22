@@ -72,8 +72,6 @@ Measured by "Power Profiler KIT 2"
 ```cpp
 /////////////////////////// LoRa Gateway Key ///////////////////////////
 
-/////////////////////////// LoRa Gateway Key ///////////////////////////
-
 #define GATEWAY_KEY "xy"                           // Separation Key "Keep it Short 2 letters is enough"
 #define NODE_NAME "PirBoxL"                        // Sensor Name which will be visible in Home Assistant
 #define Encryption true                            // Global Payload obfuscation (Encryption)
