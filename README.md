@@ -53,7 +53,7 @@ Measured by "Power Profiler KIT 2"
 2. [LilyGo LoRa Board](https://github.com/PricelessToolkit/MailBoxGuard/tree/main?tab=readme-ov-file#select-ttgo_lora-board-version): This option is more affordable but only has LoRa and does not support Encryption.
 
 
-## 📣 Updates, Bugfixes, and Breaking Changes
+### 📣 Updates, Bugfixes, and Breaking Changes
 - 22.05.2025 - Breaking Change (XOR obfuscation "Encryption" for LoRa).
 - - CapiBridge firmware needs to be updated.
 
