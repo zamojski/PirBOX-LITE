@@ -49,12 +49,17 @@ Measured by "Power Profiler KIT 2"
 
 ### Choosing a Gateway Hardware
 
-1. [CapiBridge LoRa/ESP-NOW Gateway](https://github.com/PricelessToolkit/CapiBridge): I developed this project, featuring multi-protocol support, including LoRa and ESP-NOW. It supports 2-way communication, making it possible to send commands to `LoRa` nodes as well as receive the sensor data. It will be compatible with my future LoRa and ESP-NOW sensor projects.
-2. [LilyGo LoRa Board](https://github.com/PricelessToolkit/MailBoxGuard/tree/main?tab=readme-ov-file#select-ttgo_lora-board-version): This option is more affordable but only has LoRa and support is limited.
+1. [CapiBridge LoRa/ESP-NOW Gateway](https://github.com/PricelessToolkit/CapiBridge): I developed this project, featuring multi-protocol support, including LoRa and ESP-NOW. It supports 2-way communication with Encryption, making it possible to send commands to `LoRa` nodes as well as receive the sensor data. It will be compatible with my future LoRa and ESP-NOW sensor projects.
+2. [LilyGo LoRa Board](https://github.com/PricelessToolkit/MailBoxGuard/tree/main?tab=readme-ov-file#select-ttgo_lora-board-version): This option is more affordable but only has LoRa and does not support Encryption.
+
+
+## 📣 Updates, Bugfixes, and Breaking Changes
+- 22.05.2025 - Breaking Change (XOR obfuscation "Encryption" for LoRa).
+- - CapiBridge firmware needs to be updated.
 
 ### Configuration / Reflashing:
 > [!NOTE]
-> By default, it comes already flashed and tested with the default firmware. Code"xy"
+> By default, it comes already flashed and tested with the default firmware, GATEWAY_KEY "xy" and encryption_key { 0x4B, 0xA3, 0x3F, 0x9C }. You need to change the keys!
 
 1. Install MegaTinyCore in Arduino IDE "http://drazzy.com/package_drazzy.com_index.json"
 2. Download the PirBOX-Lite project file; don't just copy and paste the code.
