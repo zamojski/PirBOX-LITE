@@ -41,7 +41,7 @@ Measured by "Power Profiler KIT 2"
 
 
 ### Required:
-- Gateway **[CapiBridge](https://www.pricelesstoolkit.com/en/projects/42-129-capibridge-gateway-kit.html#/41-frequency-868_915_mhz) or [LilyGo LoRa Board](https://github.com/PricelessToolkit/TTGO_Gateway)**
+- [CapiBridge LoRa Gateway](https://github.com/PricelessToolkit/CapiBridge) for 2-Way communication and Encryption, or the one-way more affordable version [TTGO_Gateway](https://github.com/PricelessToolkit/TTGO_Gateway) *no Encryption and support is limited.
 - Programmer [UNIProg](https://www.pricelesstoolkit.com/en/projects/33-uniprog-uartupdi-programmer-33v-0741049314412.html) or any other 3.3v UPDI Programmer
 - LiPo Battery [1S 250mAh](https://www.pricelesstoolkit.com/en/products/47-battery-li-po-37v-250mah-ph-20mm-2-pin.html) or less (Connector PH2.0) Important! MAX SIZE "35x20x4mm"
 - LiPo Charger [Micro-Charger](https://www.pricelesstoolkit.com/en/li-ion-li-poly/48-micro-charger-for-li-po-and-li-ion.html) or any other 4.2V lipo charger with (PH2.0)
