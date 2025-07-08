@@ -94,6 +94,12 @@ Measured by "Power Profiler KIT 2"
 #define LORA_SYNC_WORD            0x1424    // The 0x1424 private sync word is equivalent to the CapiBridge 0x12 sync word.
 
 
+// Correlation between Bandwidth and Spreading Factor
+
+// LORA_BANDWIDTH 125KHz, SF is in the range of 5-9.
+// LORA_BANDWIDTH 250KHz, SF is in the range of 5-10.
+// LORA_BANDWIDTH 500KHz, SF is in the range of 5-11.
+
 // LoRa Sync Word Compatibility Table
 //
 // This table shows how 16-bit sync words used on "PirBOX" SX126x-based modules (like Ra-01SH) correspond to the 8-bit sync words used on older SX127x-based modules.
