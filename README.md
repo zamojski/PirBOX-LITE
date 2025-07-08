@@ -93,7 +93,7 @@ Measured by "Power Profiler KIT 2"
 //| 500 kHz   | SF5 – SF11                  |
 
 #define LORA_BANDWIDTH            4         // bandwidth 4: 125Khz, 5: 250KHZ, 6: 500Khz
-#define LORA_SPREADING_FACTOR     8         // spreading factor 6-12 [SF5..SF12]
+#define LORA_SPREADING_FACTOR     8         // spreading factor 6-12 [SF5..SF11]
 #define LORA_CODINGRATE           1         // [1: 4/5, 2: 4/6, 3: 4/7, 4: 4/8]
 #define LORA_PREAMBLE_LENGTH      6         // Same for Tx and Rx
 #define LORA_PAYLOADLENGTH        0         // 0: Variable length packet (explicit header),  1..255 for Fixed length packet (implicit header)
