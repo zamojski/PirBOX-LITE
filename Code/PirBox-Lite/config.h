@@ -33,10 +33,6 @@
 #define LORA_CRC_ON               true
 #define LORA_SYNC_WORD            0x1424    // The 0x1424 private sync word is equivalent to the CapiBridge 0x12 sync word.
 
-// There are the following restrictions:
-// LORA_BANDWIDTH 125KHz, SF is in the range of 5-9.
-// LORA_BANDWIDTH 250KHz, SF is in the range of 5-10.
-// LORA_BANDWIDTH 500KHz, SF is in the range of 5-11.
 
 // LoRa Sync Word Compatibility Table
 //
