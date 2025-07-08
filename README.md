@@ -85,6 +85,13 @@ Measured by "Power Profiler KIT 2"
 
 #define BAND                      868E6     // 433E6 MHz or 868E6 MHz or 915E6 MHz
 #define TX_OUTPUT_POWER           20        // dBm tx output power
+
+//| Bandwidth | Supported Spreading Factors |
+//|-----------|-----------------------------|
+//| 125 kHz   | SF5 – SF9                   |
+//| 250 kHz   | SF5 – SF10                  |
+//| 500 kHz   | SF5 – SF11                  |
+
 #define LORA_BANDWIDTH            4         // bandwidth 4: 125Khz, 5: 250KHZ, 6: 500Khz
 #define LORA_SPREADING_FACTOR     8         // spreading factor 6-12 [SF5..SF12]
 #define LORA_CODINGRATE           1         // [1: 4/5, 2: 4/6, 3: 4/7, 4: 4/8]
