@@ -18,7 +18,6 @@
 // SF9: Approximately 0.100 seconds (100.147 milliseconds)
 // SF10: Approximately 0.193 seconds (193.413 milliseconds)
 // SF11: Approximately 0.385 seconds (385.297 milliseconds)
-// SF12: Approximately 0.746 seconds (746.127 milliseconds)
 //
 // These calculations demonstrate how the time on air increases with higher Spreading Factors
 // due to the decreased data rate, which is a trade-off for increased communication range and signal robustness.
