@@ -45,7 +45,7 @@ String xorCipher(String input) {
   const int keyLength = encryption_key_length;
 
   String output = "";
-  for (int i = 0; i < input.length(); i++) {
+  for (unsigned int i = 0; i < input.length(); i++) {
     byte keyByte = key[i % keyLength];
     output += char(input[i] ^ keyByte);
   }
