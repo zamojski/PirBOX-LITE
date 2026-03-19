@@ -84,7 +84,7 @@ Measured by "Power Profiler KIT 2"
 ////////////////////////////// LORA CONFIG ////////////////////////////////////
 
 #define BAND                      868E6     // 433E6 MHz or 868E6 MHz or 915E6 MHz
-#define TX_OUTPUT_POWER           20        // dBm tx output power
+#define TX_OUTPUT_POWER           22       // dBm tx output power
 
 //| Bandwidth | Supported Spreading Factors |
 //|-----------|-----------------------------|
@@ -92,10 +92,10 @@ Measured by "Power Profiler KIT 2"
 //| 250 kHz   | SF5 – SF10                  |
 //| 500 kHz   | SF5 – SF11                  |
 
-#define LORA_BANDWIDTH            4         // bandwidth 4: 125Khz, 5: 250KHZ, 6: 500Khz
-#define LORA_SPREADING_FACTOR     8         // spreading factor 6-12 [SF5..SF11]
+#define LORA_BANDWIDTH            5         // bandwidth 4: 125Khz, 5: 250KHZ, 6: 500Khz
+#define LORA_SPREADING_FACTOR     10         // spreading factor 6-12 [SF5..SF11]
 #define LORA_CODINGRATE           1         // [1: 4/5, 2: 4/6, 3: 4/7, 4: 4/8]
-#define LORA_PREAMBLE_LENGTH      6         // Same for Tx and Rx
+#define LORA_PREAMBLE_LENGTH      12         // Same for Tx and Rx
 #define LORA_PAYLOADLENGTH        0         // 0: Variable length packet (explicit header),  1..255 for Fixed length packet (implicit header)
 #define LORA_CRC_ON               true
 #define LORA_SYNC_WORD            0x1424    // The 0x1424 private sync word is equivalent to the CapiBridge 0x12 sync word.
@@ -188,7 +188,7 @@ ____________
 This project is open-source and includes Source code, 3D Print files, and Gerber files, allowing you to order blank PCBs and assemble the PirBOX-Lite yourself. To help with manual assembly, I've included an Interactive HTML BOM in the PCB folder. This tool shows the placement and polarity of each component, helping to eliminate errors during soldering.
 
 > [!NOTE]
->  Please note that POS (Pick and Place) files and KiCad source files are not included. These are intentionally omitted, as this project is intended for manual assembly. If you prefer a ready-to-use solution, you can purchase one directly from my shop: https://www.pricelesstoolkit.com.
+>  Please note that CPL file or POS "Pick and Place" files, and KiCad source files are not included. These are intentionally omitted, as this project is intended for manual assembly. If you prefer a ready-to-use solution, you can purchase one directly from my shop: https://www.pricelesstoolkit.com.
 
 ## Schematic
 <details>
