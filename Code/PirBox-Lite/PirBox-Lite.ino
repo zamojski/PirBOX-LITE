@@ -130,8 +130,6 @@ String xorCipher(String in) {
 
 
 
-
-
 // Power latch off (your hardware should cut power after this line)
 static inline void powerOFF() {
   delay(100);
@@ -139,7 +137,12 @@ static inline void powerOFF() {
 }
 
 // Battery level (0–100%), using 2.5V ref and divider = x2
-static inline int batt() {
+struct Battery {
+  int percentage;
+  float voltage; // average voltage in volts
+};
+
+static inline Battery batt() {
   float totalVolts = 0.0f;
   for (int i = 0; i < 5; i++) {
     float volts = analogReadEnh(BATT_PIN, 12) * (2.5f / 4096.0f) * 2.0f;
@@ -152,7 +155,12 @@ static inline int batt() {
   float percentage = ((averageVolts - 3.3f) / (4.1f - 3.3f)) * 100.0f;
   if (percentage < 0)   percentage = 0;
   if (percentage > 100) percentage = 100;
-  return (int)(percentage + 0.5f);
+  int pct = (int)(percentage + 0.5f);
+
+  Battery b;
+  b.percentage = pct;
+  b.voltage = averageVolts;
+  return b;
 }
 
 // -------------------- RADIO -------------------- //
@@ -223,7 +231,10 @@ void loop() {
     payload  = "{\"k\":\""; payload += GATEWAY_KEY;
     payload += "\",\"id\":\""; payload += NODE_NAME; payload += "\"";
     payload += ",\"m\":\""; payload += (pirOn ? "on" : "off"); payload += "\"";
-    payload += ",\"b\":"; payload += batt();
+
+    Battery battery = batt();
+    payload += ",\"b\":"; payload += battery.percentage;
+    payload += ",\"v\":"; payload += battery.voltage;
     payload += "}";
 
     // Copy to TX buffer (binary-safe)
