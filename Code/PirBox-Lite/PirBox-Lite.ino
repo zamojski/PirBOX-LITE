@@ -9,6 +9,12 @@
 #include <SPI.h>
 #include "Ra01S.h"
 
+// Battery level (0–100%), using 2.5V ref and divider = x2
+struct Battery {
+  int percentage;
+  float voltage; // average voltage in volts
+};
+
 // -------------------- PIN ASSIGNMENTS -------------------- //
 #define PIR_PIN          PIN_PC0   // Motion sensor input
 #define OFF_PIN          PIN_PB0   // Pull HIGH for Power OFF (latches power off)
@@ -136,11 +142,7 @@ static inline void powerOFF() {
   digitalWrite(OFF_PIN, HIGH); // Powering off
 }
 
-// Battery level (0–100%), using 2.5V ref and divider = x2
-struct Battery {
-  int percentage;
-  float voltage; // average voltage in volts
-};
+
 
 static inline Battery batt() {
   float totalVolts = 0.0f;
