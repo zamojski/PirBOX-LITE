@@ -236,7 +236,7 @@ void loop() {
 
     Battery battery = batt();
     payload += ",\"b\":"; payload += battery.percentage;
-    payload += ",\"v\":"; payload += battery.voltage;
+    payload += ",\"v\":"; payload += String(battery.voltage, 2);
     payload += "}";
 
     // Copy to TX buffer (binary-safe)
